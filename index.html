@@ -80,7 +80,10 @@
         var formatted = "";
         formatted = notFormatted
           .replace(/<([a-z][a-z0-9]*)[^>]*?(\/?)>/g, "<$1$2>")
-          .replace(/\<(?!br|i|\/i|ul|\/ul|li|\/li|p|\/p|b|\/b|)[^>]+\>/g, "")
+          .replace(
+            /\<(?!br|i|\/i|ul|\/ul|li|\/li|p|\/p|b|\/b|table|\/table|\/?tbody|\/?td|\/?tr)[^>]+\>/g,
+            ""
+          )
           .replace("&nbsp;", " ");
         document.getElementById("formattedID").innerHTML = formatted;
       }
