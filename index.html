@@ -96,6 +96,29 @@
           )
           .replace("&nbsp;", " ");
         document.getElementById("formattedID").innerHTML = formatted;
+
+        // here goes funny part
+        var jokes = [
+          "La Moscova s-a organizat un concurs de bancuri politice. Locul I: patru ani și jumătate…",
+          "Prima dietă cu rezultat garantat: mănânci doar în zilele în care faci sex :))))",
+          "Urăsc violența dar îmi place când mă lovește norocul",
+          "Patriarhia Română: “Taxa de înhumare” se plătește de acum în valută, fiindcă decesul se consideră părăsirea definitivă a țării!",
+          "Cum flirtezi în 2020: vreau să fiu în carantină cu tine",
+          "What's the difference between kinky and perverted? Kinky is when you tickle your girlfriend with a feather, perverted is when you use the whole bird.",
+          "Why did the sperm cross the road? Because I put on the wrong sock this morning.",
+          "You never know where to look when eating a banana",
+          "Foreplay is like beefburgers – three minutes on each side",
+          "What do you do if your partner starts smoking? Slow down and possibly use some lubricant.",
+          "What do tofu and a dildo have in common? They are both meat substitutes.",
+          "What kind of bees make milk? Boo-Bees.",
+          "What did the elephant say to the naked man? How do you breathe through that tiny thing?",
+          "I bought a box of condoms earlier today. The cashier asked if I’d like a bag. I said “no, I’ll just turn the lights off",
+        ];
+        var nm = Math.floor(Math.random() * 31);
+        if (nm % 5 == 0) {
+          var randomJoke = Math.floor(Math.random() * jokes.length);
+          alert(jokes[randomJoke]);
+        }
       }
     </script>
   </body>
