@@ -1,1 +1,90 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial;
+        color: white;
+      }
+
+      .split {
+        height: 100%;
+        width: 50%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+      .left {
+        left: 0;
+        background-color: rgb(126, 125, 125);
+      }
+
+      .right {
+        right: 0;
+        background-color: rgb(255, 212, 212);
+      }
+
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .centered img {
+        width: 150px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Inga tool for removing HTML tags</h1>
+
+    <p>My first paragraph.</p>
+    <div class="split left">
+      <div class="centered">
+        <h2>Original text</h2>
+        <textarea
+          id="toFormatID"
+          rows="40"
+          cols="50"
+          style="margin: auto"
+        ></textarea>
+        <button onclick="formatText()">FORMAT</button>
+      </div>
+    </div>
+
+    <div class="split right">
+      <div class="centered">
+        <h2>Formatted text</h2>
+        <textarea
+          id="formattedID"
+          rows="40"
+          cols="50"
+          style="margin: auto"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- scripts area -->
+
+    <script>
+      function formatText() {
+        var notFormatted = document.getElementById("toFormatID").value;
+        // remove everything rather than <p>, <br>, <b>, <i>, <ul> si <li>
+        var formatted = "";
+        formatted = notFormatted
+          .replace(/<([a-z][a-z0-9]*)[^>]*?(\/?)>/g, "<$1$2>")
+          .replace(/\<(?!br|i|\/i|ul|\/ul|li|\/li|p|\/p|b|\/b|)[^>]+\>/g, "")
+          .replace("&nbsp;", " ");
+        document.getElementById("formattedID").innerHTML = formatted;
+      }
+    </script>
+  </body>
+</html>
+<kkt></kkt>
